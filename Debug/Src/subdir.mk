@@ -1,0 +1,48 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+# Toolchain: GNU Tools for STM32 (13.3.rel1)
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../Src/afio.c \
+../Src/exti.c \
+../Src/gpio.c \
+../Src/main.c \
+../Src/spi.c \
+../Src/syscalls.c \
+../Src/sysmem.c \
+../Src/timer.c 
+
+OBJS += \
+./Src/afio.o \
+./Src/exti.o \
+./Src/gpio.o \
+./Src/main.o \
+./Src/spi.o \
+./Src/syscalls.o \
+./Src/sysmem.o \
+./Src/timer.o 
+
+C_DEPS += \
+./Src/afio.d \
+./Src/exti.d \
+./Src/gpio.d \
+./Src/main.d \
+./Src/spi.d \
+./Src/syscalls.d \
+./Src/sysmem.d \
+./Src/timer.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
+
+clean: clean-Src
+
+clean-Src:
+	-$(RM) ./Src/afio.cyclo ./Src/afio.d ./Src/afio.o ./Src/afio.su ./Src/exti.cyclo ./Src/exti.d ./Src/exti.o ./Src/exti.su ./Src/gpio.cyclo ./Src/gpio.d ./Src/gpio.o ./Src/gpio.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/spi.cyclo ./Src/spi.d ./Src/spi.o ./Src/spi.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/timer.cyclo ./Src/timer.d ./Src/timer.o ./Src/timer.su
+
+.PHONY: clean-Src
+
